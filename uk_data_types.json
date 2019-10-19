@@ -1,0 +1,399 @@
+[
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2016-03-01",
+    "name": "Number days with maximum temperature greater than or equal 90.0 F",
+    "datacoverage": 1,
+    "id": "DT90"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2018-01-01",
+    "name": "First freeze <= to 32F/0C of the year.",
+    "datacoverage": 1,
+    "id": "FZF0"
+  },
+  {
+    "mindate": "1765-01-01",
+    "maxdate": "2018-01-01",
+    "name": "First freeze <= 28F/-2.2C of the year",
+    "datacoverage": 1,
+    "id": "FZF1"
+  },
+  {
+    "mindate": "1767-01-01",
+    "maxdate": "2018-01-01",
+    "name": "First freeze <= 24F/-4.4C of the year",
+    "datacoverage": 1,
+    "id": "FZF2"
+  },
+  {
+    "mindate": "1774-01-01",
+    "maxdate": "2018-01-01",
+    "name": "First freeze <= 20F/-6.7C of the year",
+    "datacoverage": 1,
+    "id": "FZF3"
+  },
+  {
+    "mindate": "1774-01-01",
+    "maxdate": "2018-01-01",
+    "name": "First freeze <= 16F/-8.9C of the year",
+    "datacoverage": 1,
+    "id": "FZF4"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2018-01-01",
+    "name": "Last freeze <= 32F/0C of the year",
+    "datacoverage": 1,
+    "id": "FZF5"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2018-01-01",
+    "name": "Last freeze <= 28F/-2.2C of the year",
+    "datacoverage": 1,
+    "id": "FZF6"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2018-01-01",
+    "name": "Last freeze <= 24F/-4.4C of the year",
+    "datacoverage": 1,
+    "id": "FZF7"
+  },
+  {
+    "mindate": "1766-01-01",
+    "maxdate": "2018-01-01",
+    "name": "Last freeze <= 20F/-6.7C of the year",
+    "datacoverage": 1,
+    "id": "FZF8"
+  },
+  {
+    "mindate": "1767-01-01",
+    "maxdate": "2018-01-01",
+    "name": "Last freeze <= 16F/-8.9C of the year",
+    "datacoverage": 1,
+    "id": "FZF9"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2016-03-01",
+    "name": "Monthly Mean minimum temperature",
+    "datacoverage": 1,
+    "id": "MMNT"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2016-03-01",
+    "name": "Monthly Mean maximum temperature",
+    "datacoverage": 1,
+    "id": "MMXT"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2016-03-01",
+    "name": "Monthly mean temperature",
+    "datacoverage": 1,
+    "id": "MNTM"
+  },
+  {
+    "mindate": "1781-01-01",
+    "maxdate": "2017-02-01",
+    "name": "Number of days with greater than or equal to 0.5 inch of precipitation",
+    "datacoverage": 1,
+    "id": "DP05"
+  },
+  {
+    "mindate": "1857-01-01",
+    "maxdate": "2016-03-01",
+    "name": "Maximum snow depth",
+    "datacoverage": 1,
+    "id": "MXSD"
+  },
+  {
+    "mindate": "1857-01-18",
+    "maxdate": "2019-10-16",
+    "name": "Snow depth",
+    "datacoverage": 1,
+    "id": "SNWD"
+  },
+  {
+    "mindate": "1781-01-01",
+    "maxdate": "2016-03-01",
+    "name": "Total precipitation",
+    "datacoverage": 1,
+    "id": "TPCP"
+  },
+  {
+    "mindate": "1863-12-01",
+    "maxdate": "2019-09-01",
+    "name": "Number days with snow depth > 1 inch(25.4mm) for the period.",
+    "datacoverage": 1,
+    "id": "DSND"
+  },
+  {
+    "mindate": "1863-12-01",
+    "maxdate": "2019-09-01",
+    "name": "Extreme maximum snow depth for the period.",
+    "datacoverage": 1,
+    "id": "EMSD"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Cooling Degree Days Season to Date",
+    "datacoverage": 1,
+    "id": "CDSD"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Cooling Degree Days",
+    "datacoverage": 1,
+    "id": "CLDD"
+  },
+  {
+    "mindate": "1763-07-01",
+    "maxdate": "2019-09-01",
+    "name": "Heating Degree Days Season to Date",
+    "datacoverage": 1,
+    "id": "HDSD"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Heating degree days",
+    "datacoverage": 1,
+    "id": "HTDD"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-10-16",
+    "name": "Average Temperature.",
+    "datacoverage": 1,
+    "id": "TAVG"
+  },
+  {
+    "mindate": "1781-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Number of days with greater than or equal to 0.1 inch of precipitation",
+    "datacoverage": 1,
+    "id": "DP01"
+  },
+  {
+    "mindate": "1781-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Number of days with greater than or equal to 1.0 inch of precipitation",
+    "datacoverage": 1,
+    "id": "DP10"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Number days with minimum temperature less than or equal to 0.0 F",
+    "datacoverage": 1,
+    "id": "DT00"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Number days with minimum temperature less than or equal to 32.0 F",
+    "datacoverage": 1,
+    "id": "DT32"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Number days with maximum temperature < 32 F.",
+    "datacoverage": 1,
+    "id": "DX32"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Extreme minimum temperature for the period.",
+    "datacoverage": 1,
+    "id": "EMNT"
+  },
+  {
+    "mindate": "1781-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Extreme maximum precipitation for the period.",
+    "datacoverage": 1,
+    "id": "EMXP"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Extreme maximum temperature for the period.",
+    "datacoverage": 1,
+    "id": "EMXT"
+  },
+  {
+    "mindate": "1781-01-01",
+    "maxdate": "2019-10-16",
+    "name": "Precipitation",
+    "datacoverage": 1,
+    "id": "PRCP"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-10-16",
+    "name": "Maximum temperature",
+    "datacoverage": 1,
+    "id": "TMAX"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-10-16",
+    "name": "Minimum temperature",
+    "datacoverage": 1,
+    "id": "TMIN"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Number days with maximum temperature > 70 F (21.1C)",
+    "datacoverage": 1,
+    "id": "DX70"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-09-01",
+    "name": "Number days with maximum temperature > 90 F (32.2C)",
+    "datacoverage": 1,
+    "id": "DX90"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-10-16",
+    "name": "Highest minimum temperature",
+    "id": "HTMN"
+  },
+  {
+    "mindate": "1763-01-01",
+    "maxdate": "2019-10-16",
+    "name": "Lowest minimum temperature",
+    "id": "LTMN"
+  },
+  {
+    "mindate": "1840-05-01",
+    "maxdate": "2016-03-01",
+    "name": "Total snow fall",
+    "datacoverage": 1,
+    "id": "TSNW"
+  },
+  {
+    "mindate": "1952-07-01",
+    "maxdate": "2019-10-16",
+    "name": "Water equivalent of snow on the ground",
+    "datacoverage": 1,
+    "id": "WESD"
+  },
+  {
+    "mindate": "1851-05-19",
+    "maxdate": "2019-10-14",
+    "name": "Fog, ice fog, or freezing fog (may include heavy fog)",
+    "datacoverage": 1,
+    "id": "WT01"
+  },
+  {
+    "mindate": "1851-04-02",
+    "maxdate": "2019-10-14",
+    "name": "Thunder",
+    "datacoverage": 1,
+    "id": "WT03"
+  },
+  {
+    "mindate": "1852-02-20",
+    "maxdate": "2019-10-13",
+    "name": "Ice pellets, sleet, snow pellets, or small hail\" ",
+    "datacoverage": 1,
+    "id": "WT04"
+  },
+  {
+    "mindate": "1851-04-13",
+    "maxdate": "2019-10-11",
+    "name": "Hail (may include small hail)",
+    "datacoverage": 1,
+    "id": "WT05"
+  },
+  {
+    "mindate": "1851-04-11",
+    "maxdate": "2019-10-14",
+    "name": "Smoke or haze ",
+    "datacoverage": 1,
+    "id": "WT08"
+  },
+  {
+    "mindate": "1852-02-12",
+    "maxdate": "2019-10-12",
+    "name": "Blowing or drifting snow",
+    "datacoverage": 1,
+    "id": "WT09"
+  },
+  {
+    "mindate": "1851-04-01",
+    "maxdate": "2019-04-30",
+    "name": "Rain (may include freezing rain, drizzle, and freezing drizzle)\" ",
+    "datacoverage": 1,
+    "id": "WT16"
+  },
+  {
+    "mindate": "1851-04-13",
+    "maxdate": "2019-04-13",
+    "name": "Snow, snow pellets, snow grains, or ice crystals",
+    "datacoverage": 1,
+    "id": "WT18"
+  },
+  {
+    "mindate": "1948-01-01",
+    "maxdate": "2019-10-14",
+    "name": "Peak gust time",
+    "datacoverage": 1,
+    "id": "PGTM"
+  },
+  {
+    "mindate": "1890-03-28",
+    "maxdate": "2019-10-13",
+    "name": "Glaze or rime ",
+    "datacoverage": 1,
+    "id": "WT06"
+  },
+  {
+    "mindate": "1840-05-01",
+    "maxdate": "2019-09-01",
+    "name": "Number days with snow depth > 1 inch.",
+    "datacoverage": 1,
+    "id": "DSNW"
+  },
+  {
+    "mindate": "1840-05-01",
+    "maxdate": "2019-09-01",
+    "name": "Extreme maximum snowfall for the period.",
+    "datacoverage": 1,
+    "id": "EMSN"
+  },
+  {
+    "mindate": "1948-01-01",
+    "maxdate": "2019-10-15",
+    "name": "Peak gust wind speed",
+    "datacoverage": 1,
+    "id": "WSFG"
+  },
+  {
+    "mindate": "1891-12-21",
+    "maxdate": "2019-10-10",
+    "name": "Dust, volcanic ash, blowing dust, blowing sand, or blowing obstruction",
+    "datacoverage": 1,
+    "id": "WT07"
+  },
+  {
+    "mindate": "1926-03-17",
+    "maxdate": "2019-08-31",
+    "name": "Thickness of ice on water",
+    "datacoverage": 1,
+    "id": "THIC"
+  }
+]
