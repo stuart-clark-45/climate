@@ -1,0 +1,8 @@
+requests
+geopy
+matplotlib
+basemap
+pandas
+geopandas
+shapely
+descartes
