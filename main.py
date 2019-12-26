@@ -19,8 +19,13 @@ def print_json(obj):
 
 
 def main():
-    lim_lon = (-12, 5)
-    lim_lat = (45, 65)
+    df = import_station_data()
+
+    lon_series = df['longitude']
+    lat_series = df['latitude']
+
+    lim_lon = (lon_series.min(), lon_series.max())
+    lim_lat = (lat_series.min(), lat_series.max())
 
     world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
     world_ax = world.plot(figsize=(10, 6))
@@ -45,8 +50,6 @@ def main():
     forecast_location = my_house
     gdf = GeoDataFrame(DataFrame([{}]), geometry=[forecast_location])
     gdf.plot(ax=world_ax,  marker="D", markersize=20, color="Purple")
-
-    df = import_station_data()
 
     for date in df.date.unique():
         df_date = df[df.date == date]
