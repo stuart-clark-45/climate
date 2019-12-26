@@ -19,10 +19,10 @@ def print_json(obj):
 
 
 def main():
-    df = import_station_data()
+    station_df = import_station_data()
 
-    lon_series = df['longitude']
-    lat_series = df['latitude']
+    lon_series = station_df['longitude']
+    lat_series = station_df['latitude']
 
     lim_lon = (lon_series.min(), lon_series.max())
     lim_lat = (lat_series.min(), lat_series.max())
@@ -51,8 +51,8 @@ def main():
     gdf = GeoDataFrame(DataFrame([{}]), geometry=[forecast_location])
     gdf.plot(ax=world_ax,  marker="D", markersize=20, color="Purple")
 
-    for date in df.date.unique():
-        df_date = df[df.date == date]
+    for date in station_df.date.unique():
+        df_date = station_df[station_df.date == date]
         if len(df_date.station.unique()) != len(df_date):
             raise Exception('Multiple data points for same date and station')
         station_points = [GeoPoint(row["longitude"], row["latitude"]) for index, row in df_date.iterrows()]
