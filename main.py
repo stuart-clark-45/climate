@@ -38,7 +38,7 @@ for row in sample_grid:
         })
         sample_grid_flat.append(point)
 gdf = GeoDataFrame(pd.DataFrame(samples), geometry=sample_grid_flat)
-gdf.plot(ax=world_ax, markersize=15, color="Red")
+gdf.plot(ax=world_ax, markersize=5, color="Red")
 
 # plt.show()
 
@@ -137,7 +137,7 @@ for date in df.date.unique():
     station_points = [GeoPoint(row["longitude"], row["latitude"]) for index, row in df_date.iterrows()]
 
     gdf = GeoDataFrame(df_date, geometry=station_points)
-    gdf.plot(ax=world_ax, markersize=15, cmap="Reds", column='value', scheme="BoxPlot")
+    gdf.plot(ax=world_ax, marker="x", markersize=15, cmap="Reds", column='value', scheme="BoxPlot")
     plt.show()
     break
 
