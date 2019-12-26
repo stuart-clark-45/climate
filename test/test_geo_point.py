@@ -1,14 +1,13 @@
-from unittest import TestCase
-
 from src.geo_const import BEARING_NORTH
-from src.point import Point
+from src.geo_point import GeoPoint
+from test.my_test_case import MyTestCase
 
 ab_dist = 1
-a = Point(10, -2)
+a = GeoPoint(10, -2)
 b = a.translate_km(ab_dist, BEARING_NORTH)
 
 
-class TestPoint(TestCase):
+class TestGeoPoint(MyTestCase):
     def test_translate_km(self):
         # Coordinate value tested using google maps measure functionality
         self.assertEqual(b.lon_lat(), (a.lon(), -1.9910167950466309))

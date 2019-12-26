@@ -1,12 +1,12 @@
 import math
 
 from geopy.distance import geodesic
-from shapely.geometry import Point as ShapleyPoint
+from shapely.geometry import Point
 
 from src.geo_const import R
 
 
-class Point(ShapleyPoint):
+class GeoPoint(Point):
 
     def lon(self):
         return self.x
@@ -36,9 +36,9 @@ class Point(ShapleyPoint):
         lon_after = lon_before + math.atan2(math.sin(bearing) * math.sin(distance / R) * math.cos(lat_before),
                                             math.cos(distance / R) - math.sin(lat_before) * math.sin(lat_after))
 
-        return Point(math.degrees(lon_after), math.degrees(lat_after))
+        return GeoPoint(math.degrees(lon_after), math.degrees(lat_after))
 
-    def distance_km(self, other: "Point"):
+    def distance_km(self, other: "GeoPoint"):
         """
         :param other: the point you want to know the distance to
         :return: the distance form this point to {@code other} in km
