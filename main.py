@@ -3,7 +3,8 @@ import logging
 
 import geopandas as gpd
 import matplotlib.pyplot as plt
-import pandas as pd
+
+from pandas import DataFrame
 from geopandas import GeoDataFrame
 
 
@@ -37,7 +38,7 @@ for row in sample_grid:
             "latitude": point.lat(),
         })
         sample_grid_flat.append(point)
-gdf = GeoDataFrame(pd.DataFrame(samples), geometry=sample_grid_flat)
+gdf = GeoDataFrame(DataFrame(samples), geometry=sample_grid_flat)
 gdf.plot(ax=world_ax, markersize=5, color="Red")
 
 # plt.show()
@@ -49,7 +50,7 @@ gdf.plot(ax=world_ax, markersize=5, color="Red")
 # Plot my house
 # my_house = GeoPoint(-3.198804, 50.925521)
 # forecast_location = my_house
-# gdf = GeoDataFrame(pd.DataFrame([{}]), geometry=[my_house])
+# gdf = GeoDataFrame(DataFrame([{}]), geometry=[my_house])
 # gdf.plot(ax=world_ax, markersize=15, color="Red")
 # plt.show()
 # plot_points([forecast_location])
