@@ -1,5 +1,6 @@
-# Radius of the Earth
-R = 6378.1
+from geopy.distance import EARTH_RADIUS
+
+R = EARTH_RADIUS
 
 BEARING_NORTH = 0
 BEARING_EAST = 90
