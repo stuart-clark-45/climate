@@ -25,7 +25,6 @@ def main():
     world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
     world_ax = world.plot(figsize=(10, 6))
     world_ax.set(xlim=lim_lon, ylim=lim_lat, autoscale_on=False, xlabel="Longitude", ylabel="Latitude")
-    # world_ax.set(autoscale_on=False, xlabel="Latitude", ylabel="Longitude")
 
     sample_grid = geo_sample_grid(lim_lon, lim_lat, 100)
 
@@ -41,19 +40,11 @@ def main():
     gdf = GeoDataFrame(DataFrame(samples), geometry=sample_grid_flat)
     gdf.plot(ax=world_ax, markersize=5, color="Red")
 
-    # plt.show()
-
-    # geolocator = Nominatim()
-    # location = geolocator.geocode("EX15 3PQ")
-    # print(location.address)
-
     # Plot my house
-    # my_house = GeoPoint(-3.198804, 50.925521)
-    # forecast_location = my_house
-    # gdf = GeoDataFrame(DataFrame([{}]), geometry=[my_house])
-    # gdf.plot(ax=world_ax, markersize=15, color="Red")
-    # plt.show()
-    # plot_points([forecast_location])
+    my_house = GeoPoint(-3.198804, 50.925521)
+    forecast_location = my_house
+    gdf = GeoDataFrame(DataFrame([{}]), geometry=[forecast_location])
+    gdf.plot(ax=world_ax,  marker="D", markersize=20, color="Purple")
 
     df = import_station_data()
 
