@@ -8,7 +8,7 @@ from pandas import DataFrame
 from geopandas import GeoDataFrame
 from mongoengine import connect
 
-from src.geo_point import GeoPoint
+from src.model.geo_point import GeoPoint
 from src.station_interpolator import StationInterpolator
 from src.geo_util import geo_sample_grid
 from src.station_data_importer import import_station_data

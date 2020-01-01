@@ -1,7 +1,7 @@
 from typing import Tuple, List
 
 from src.geo_const import BEARING_EAST, BEARING_NORTH
-from src.geo_point import GeoPoint
+from src.model.geo_point import GeoPoint
 
 
 def geo_sample_grid(lim_longitude: Tuple[float, float], lim_latitude: Tuple[float, float], resolution: float):

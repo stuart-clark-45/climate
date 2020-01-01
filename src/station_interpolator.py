@@ -1,7 +1,7 @@
 from pandas import DataFrame
 
 from src.model.data.station_interpolator_params import StationInterpolatorParams
-from src.geo_point import GeoPoint
+from src.model.geo_point import GeoPoint
 
 
 class StationInterpolator:
