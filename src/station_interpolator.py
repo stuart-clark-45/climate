@@ -1,6 +1,6 @@
 from pandas import DataFrame
 
-from src.model.station_interpolator_params import StationInterpolatorParams
+from src.model.data.station_interpolator_params import StationInterpolatorParams
 from src.geo_point import GeoPoint
 
 
