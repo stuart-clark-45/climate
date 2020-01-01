@@ -1,7 +1,7 @@
 import logging
 
 from datetime import datetime, timedelta
-from noaa import NOAA
+from src.service.noaa import NOAA
 from pandas import DataFrame
 
 
