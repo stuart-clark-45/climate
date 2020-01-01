@@ -6,12 +6,15 @@ import matplotlib.pyplot as plt
 
 from pandas import DataFrame
 from geopandas import GeoDataFrame
+from mongoengine import connect
 
 from geo_point import GeoPoint
 from src.geo_util import geo_sample_grid
 from station_data_importer import import_station_data
 
 logging.basicConfig(level=logging.INFO)
+
+connect('climate')
 
 
 def print_json(obj):
