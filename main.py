@@ -55,14 +55,14 @@ def main():
     gdf.plot(ax=world_ax, marker="D", markersize=20, color="Purple")
 
     for date in station_df.date.unique():
-        df_date = station_df[station_df.date == date]
-        if len(df_date.station.unique()) != len(df_date):
+        date_df = station_df[station_df.date == date]
+        if len(date_df.station.unique()) != len(date_df):
             raise Exception('Multiple data points for same date and station')
 
-        StationInterpolator().interpolate_station_data(df_date, samples_df)
+        StationInterpolator().interpolate_station_data(date_df, samples_df)
 
-        # station_points = [GeoPoint(row["longitude"], row["latitude"]) for index, row in df_date.iterrows()]
-        # gdf = GeoDataFrame(df_date, geometry=station_points)
+        # station_points = [GeoPoint(row["longitude"], row["latitude"]) for index, row in date_df.iterrows()]
+        # gdf = GeoDataFrame(date_df, geometry=station_points)
         # gdf.plot(
         #     ax=world_ax,
         #     marker="x",
