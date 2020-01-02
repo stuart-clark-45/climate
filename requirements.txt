@@ -8,3 +8,4 @@ shapely
 descartes
 mapclassify
 mongoengine
+scipy
