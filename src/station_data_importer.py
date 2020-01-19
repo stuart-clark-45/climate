@@ -91,6 +91,7 @@ def import_station_data() -> StationData:
         date_df = df[df.date == date]
         if len(date_df.station.unique()) != len(date_df):
             raise Exception('Multiple data points for same date and station')
+        date_df.reset_index(inplace=True)
         station_df_series.append(date_df)
 
     return StationData(station_df_series, bounds)

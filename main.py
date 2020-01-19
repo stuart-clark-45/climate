@@ -13,7 +13,7 @@ from src.station_interpolator import StationInterpolator
 from src.geo_util import geo_sample_grid
 from src.station_data_importer import import_station_data
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 
 connect('climate')
 
@@ -26,6 +26,7 @@ def main():
     # Get the station data and pull out some useful values
     station_data = import_station_data()
     bounds = station_data.bounds
+    station_df_series = station_data.station_df_series
     lim_lon = bounds.lon
     lim_lat = bounds.lat
 
@@ -52,9 +53,9 @@ def main():
     gdf = GeoDataFrame(DataFrame([{}]), geometry=[forecast_location])
     gdf.plot(ax=world_ax, marker="D", markersize=20, color="Purple")
 
-    date_df = station_data.station_df_series[0]
-
-    StationInterpolator().interpolate_station_data(date_df, samples_df)
+    StationInterpolator.optimise_params(station_df_series[:5])
+    interpolator = StationInterpolator()
+    interpolator.interpolate_station_data(station_df_series[0], samples_df)
 
     # station_points = [GeoPoint(row["longitude"], row["latitude"]) for index, row in date_df.iterrows()]
     # gdf = GeoDataFrame(date_df, geometry=station_points)
