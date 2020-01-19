@@ -23,13 +23,11 @@ def print_json(obj):
 
 
 def main():
-    station_df = import_station_data()
-
-    lon_series = station_df['longitude']
-    lat_series = station_df['latitude']
-
-    lim_lon = (lon_series.min(), lon_series.max())
-    lim_lat = (lat_series.min(), lat_series.max())
+    # Get the station data and pull out some useful values
+    station_data = import_station_data()
+    bounds = station_data.bounds
+    lim_lon = bounds.lon
+    lim_lat = bounds.lat
 
     # Get the samples data frame
     sample_grid = geo_sample_grid(lim_lon, lim_lat, 20)
@@ -54,35 +52,31 @@ def main():
     gdf = GeoDataFrame(DataFrame([{}]), geometry=[forecast_location])
     gdf.plot(ax=world_ax, marker="D", markersize=20, color="Purple")
 
-    for date in station_df.date.unique():
-        date_df = station_df[station_df.date == date]
-        if len(date_df.station.unique()) != len(date_df):
-            raise Exception('Multiple data points for same date and station')
+    date_df = station_data.station_df_series[0]
 
-        StationInterpolator().interpolate_station_data(date_df, samples_df)
+    StationInterpolator().interpolate_station_data(date_df, samples_df)
 
-        # station_points = [GeoPoint(row["longitude"], row["latitude"]) for index, row in date_df.iterrows()]
-        # gdf = GeoDataFrame(date_df, geometry=station_points)
-        # gdf.plot(
-        #     ax=world_ax,
-        #     marker="x",
-        #     markersize=15,
-        #     cmap="Reds",
-        #     column='value',
-        #     scheme="BoxPlot",
-        # )
+    # station_points = [GeoPoint(row["longitude"], row["latitude"]) for index, row in date_df.iterrows()]
+    # gdf = GeoDataFrame(date_df, geometry=station_points)
+    # gdf.plot(
+    #     ax=world_ax,
+    #     marker="x",
+    #     markersize=15,
+    #     cmap="Reds",
+    #     column='value',
+    #     scheme="BoxPlot",
+    # )
 
-        gdf = GeoDataFrame(samples_df, geometry=sample_grid_flat)
-        gdf.plot(
-            ax=world_ax,
-            markersize=5,
-            cmap="Reds",
-            column='value',
-            scheme="BoxPlot",
-        )
+    gdf = GeoDataFrame(samples_df, geometry=sample_grid_flat)
+    gdf.plot(
+        ax=world_ax,
+        markersize=5,
+        cmap="Reds",
+        column='value',
+        scheme="BoxPlot",
+    )
 
-        plt.show()
-        break
+    plt.show()
 
 
 main()

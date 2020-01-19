@@ -1,11 +1,29 @@
 import logging
 
 from datetime import datetime, timedelta
+from typing import Tuple, List
+
 from src.service.noaa import NOAA
 from pandas import DataFrame
 
 
-def import_station_data() -> DataFrame:
+class GeoPointBounds:
+    def __init__(self, lat: Tuple[float, float], lon: Tuple[float, float]) -> None:
+        """
+        :param lat: tuple with the following form (<min lat>, <max lat>)
+        :param lon:tuple with the following form (<min lon>, <max lon>)
+        """
+        self.lat = lat
+        self.lon = lon
+
+
+class StationData:
+    def __init__(self, station_df_series: List[DataFrame], bounds: GeoPointBounds) -> None:
+        self.station_df_series = station_df_series
+        self.bounds = bounds
+
+
+def import_station_data() -> StationData:
     # Init NOAA client
     token = "QuhilYMtyPaXXgylTKUwWMUypPOqZZja"
     noaa = NOAA(token)
@@ -59,31 +77,43 @@ def import_station_data() -> DataFrame:
 
     logging.info(f"Obtained data for {len(df.station.unique())} stations")
 
-    return df
+    # Create bounding box for the data retrieved
+    lon_series = df['longitude']
+    lat_series = df['latitude']
+    lim_lat = (lat_series.min(), lat_series.max())
+    lim_lon = (lon_series.min(), lon_series.max())
+    bounds = GeoPointBounds(lim_lat, lim_lon)
 
+    # Split data frame into multiple data frames, one each date in the series.
+    dates = df.date.unique()
+    station_df_series = []
+    for date in dates:
+        date_df = df[df.date == date]
+        if len(date_df.station.unique()) != len(date_df):
+            raise Exception('Multiple data points for same date and station')
+        station_df_series.append(date_df)
 
+    return StationData(station_df_series, bounds)
 
-
-
- # TODO This is some code to get hold of meta data
-    # # plt.show()
-    #
-    # # print_json(noaa.locations_categories())
-    # # print_json(noaa.data_set(data_type_id=data_type_id))
-    #
-    #
-    # # print_json(noaa.data_categories())
-    # data_types = {}
-    # for station in stations:
-    #     station_id = station["id"]
-    #     logging.info(f'Getting data types for {station_id}')
-    #     try:
-    #         for data_type in noaa.data_type(station_id=station_id)["results"]:
-    #             dt_id = data_type["id"]
-    #             if not data_type["id"] in data_types:
-    #                 data_types[dt_id] = data_type
-    #
-    #     except Exception:
-    #         logging.warning(f"Couldn't get data types for {station_id}")
-    # print_json(list(data_types.values()))
-    #
+# TODO This is some code to get hold of meta data
+# # plt.show()
+#
+# # print_json(noaa.locations_categories())
+# # print_json(noaa.data_set(data_type_id=data_type_id))
+#
+#
+# # print_json(noaa.data_categories())
+# data_types = {}
+# for station in stations:
+#     station_id = station["id"]
+#     logging.info(f'Getting data types for {station_id}')
+#     try:
+#         for data_type in noaa.data_type(station_id=station_id)["results"]:
+#             dt_id = data_type["id"]
+#             if not data_type["id"] in data_types:
+#                 data_types[dt_id] = data_type
+#
+#     except Exception:
+#         logging.warning(f"Couldn't get data types for {station_id}")
+# print_json(list(data_types.values()))
+#
